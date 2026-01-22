@@ -68,4 +68,8 @@ public class Player extends Actor {
         sprite.setPosition(getX(), getY());
         sprite.draw(batch);
     }
+
+    public Sprite getSprite() {
+        return sprite;
+    }
 }
