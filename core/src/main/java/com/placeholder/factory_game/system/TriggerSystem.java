@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -7,12 +7,12 @@ import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.Timer;
-import io.github.com.quillraven.asset.SoundAsset;
-import io.github.com.quillraven.audio.AudioService;
-import io.github.com.quillraven.component.Animation2D;
-import io.github.com.quillraven.component.Life;
-import io.github.com.quillraven.component.Tiled;
-import io.github.com.quillraven.component.Trigger;
+import com.placeholder.factory_game.asset.SoundAsset;
+import com.placeholder.factory_game.audio.AudioService;
+import com.placeholder.factory_game.component.Animation2D;
+import com.placeholder.factory_game.component.Life;
+import com.placeholder.factory_game.component.Tiled;
+import com.placeholder.factory_game.component.Trigger;
 
 public class TriggerSystem extends IteratingSystem {
     private final AudioService audioService;

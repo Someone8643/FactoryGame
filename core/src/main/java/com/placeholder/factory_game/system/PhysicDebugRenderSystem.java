@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.gdx.graphics.Camera;

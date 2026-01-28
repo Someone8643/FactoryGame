@@ -1,12 +1,12 @@
-package io.github.com.quillraven.screen;
+package com.placeholder.factory_game.screen;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.asset.AssetService;
-import io.github.com.quillraven.asset.AtlasAsset;
-import io.github.com.quillraven.asset.SkinAsset;
-import io.github.com.quillraven.asset.SoundAsset;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.asset.AssetService;
+import com.placeholder.factory_game.asset.AtlasAsset;
+import com.placeholder.factory_game.asset.SkinAsset;
+import com.placeholder.factory_game.asset.SoundAsset;
 
 public class LoadingScreen extends ScreenAdapter {
 

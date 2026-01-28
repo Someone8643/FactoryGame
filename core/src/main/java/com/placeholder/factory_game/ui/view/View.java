@@ -1,4 +1,4 @@
-package io.github.com.quillraven.ui.view;
+package com.placeholder.factory_game.ui.view;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
@@ -10,8 +10,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import io.github.com.quillraven.input.UiEvent;
-import io.github.com.quillraven.ui.model.ViewModel;
+import com.placeholder.factory_game.input.UiEvent;
+import com.placeholder.factory_game.ui.model.ViewModel;
 
 public abstract class View<T extends ViewModel> extends Table implements EventListener {
 

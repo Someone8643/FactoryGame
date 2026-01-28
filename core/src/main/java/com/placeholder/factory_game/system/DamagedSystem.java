@@ -1,12 +1,12 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import io.github.com.quillraven.component.Damaged;
-import io.github.com.quillraven.component.Life;
-import io.github.com.quillraven.component.Transform;
-import io.github.com.quillraven.ui.model.GameViewModel;
+import com.placeholder.factory_game.component.Damaged;
+import com.placeholder.factory_game.component.Life;
+import com.placeholder.factory_game.component.Transform;
+import com.placeholder.factory_game.ui.model.GameViewModel;
 
 public class DamagedSystem extends IteratingSystem {
     private final GameViewModel viewModel;

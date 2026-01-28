@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.component.CameraFollow;
-import io.github.com.quillraven.component.Transform;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.component.CameraFollow;
+import com.placeholder.factory_game.component.Transform;
 
 public class CameraSystem extends IteratingSystem {
     private static final float CAM_OFFSET_Y = 1f; // make the camera look up 'X' additional tiles

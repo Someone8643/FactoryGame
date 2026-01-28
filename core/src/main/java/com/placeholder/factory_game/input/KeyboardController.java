@@ -1,4 +1,4 @@
-package io.github.com.quillraven.input;
+package com.placeholder.factory_game.input;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Input;

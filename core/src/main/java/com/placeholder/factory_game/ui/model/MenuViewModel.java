@@ -1,11 +1,11 @@
-package io.github.com.quillraven.ui.model;
+package com.placeholder.factory_game.ui.model;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.TimeUtils;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.asset.SoundAsset;
-import io.github.com.quillraven.audio.AudioService;
-import io.github.com.quillraven.screen.GameScreen;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.asset.SoundAsset;
+import com.placeholder.factory_game.audio.AudioService;
+import com.placeholder.factory_game.screen.GameScreen;
 
 public class MenuViewModel extends ViewModel {
 

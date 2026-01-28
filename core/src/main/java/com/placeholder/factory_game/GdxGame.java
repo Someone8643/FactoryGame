@@ -1,4 +1,4 @@
-package io.github.com.quillraven;
+package com.placeholder.factory_game;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
@@ -16,9 +16,9 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import io.github.com.quillraven.asset.AssetService;
-import io.github.com.quillraven.audio.AudioService;
-import io.github.com.quillraven.screen.LoadingScreen;
+import com.placeholder.factory_game.asset.AssetService;
+import com.placeholder.factory_game.audio.AudioService;
+import com.placeholder.factory_game.screen.LoadingScreen;
 
 import java.util.HashMap;
 import java.util.Map;

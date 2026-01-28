@@ -1,4 +1,4 @@
-package io.github.com.quillraven.tiled;
+package com.placeholder.factory_game.tiled;
 
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
@@ -14,9 +14,9 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.asset.AssetService;
-import io.github.com.quillraven.asset.MapAsset;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.asset.AssetService;
+import com.placeholder.factory_game.asset.MapAsset;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

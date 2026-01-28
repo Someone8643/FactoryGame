@@ -1,6 +1,6 @@
-package io.github.com.quillraven.ui.model;
+package com.placeholder.factory_game.ui.model;
 
-import io.github.com.quillraven.GdxGame;
+import com.placeholder.factory_game.GdxGame;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

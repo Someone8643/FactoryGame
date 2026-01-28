@@ -1,4 +1,4 @@
-package io.github.com.quillraven.asset;
+package com.placeholder.factory_game.asset;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;

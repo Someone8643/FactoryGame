@@ -1,14 +1,14 @@
-package io.github.com.quillraven.ai;
+package com.placeholder.factory_game.ai;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.ai.msg.Telegram;
-import io.github.com.quillraven.component.Animation2D;
-import io.github.com.quillraven.component.Animation2D.AnimationType;
-import io.github.com.quillraven.component.Attack;
-import io.github.com.quillraven.component.Damaged;
-import io.github.com.quillraven.component.Fsm;
-import io.github.com.quillraven.component.Move;
+import com.placeholder.factory_game.component.Animation2D;
+import com.placeholder.factory_game.component.Animation2D.AnimationType;
+import com.placeholder.factory_game.component.Attack;
+import com.placeholder.factory_game.component.Damaged;
+import com.placeholder.factory_game.component.Fsm;
+import com.placeholder.factory_game.component.Move;
 
 public enum AnimationState implements State<Entity> {
     IDLE {

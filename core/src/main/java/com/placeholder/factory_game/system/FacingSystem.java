@@ -1,11 +1,11 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.math.Vector2;
-import io.github.com.quillraven.component.Facing;
-import io.github.com.quillraven.component.Move;
+import com.placeholder.factory_game.component.Facing;
+import com.placeholder.factory_game.component.Move;
 
 public class FacingSystem extends IteratingSystem {
 

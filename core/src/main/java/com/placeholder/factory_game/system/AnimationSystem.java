@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -9,12 +9,12 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import io.github.com.quillraven.asset.AssetService;
-import io.github.com.quillraven.asset.AtlasAsset;
-import io.github.com.quillraven.component.Animation2D;
-import io.github.com.quillraven.component.Facing;
-import io.github.com.quillraven.component.Facing.FacingDirection;
-import io.github.com.quillraven.component.Graphic;
+import com.placeholder.factory_game.asset.AssetService;
+import com.placeholder.factory_game.asset.AtlasAsset;
+import com.placeholder.factory_game.component.Animation2D;
+import com.placeholder.factory_game.component.Facing;
+import com.placeholder.factory_game.component.Facing.FacingDirection;
+import com.placeholder.factory_game.component.Graphic;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package io.github.com.quillraven.input;
+package com.placeholder.factory_game.input;
 
 public interface ControllerState {
     void keyDown(Command command);

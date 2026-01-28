@@ -1,9 +1,9 @@
-package io.github.com.quillraven.ui.model;
+package com.placeholder.factory_game.ui.model;
 
 import com.badlogic.gdx.math.Vector2;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.asset.SoundAsset;
-import io.github.com.quillraven.audio.AudioService;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.asset.SoundAsset;
+import com.placeholder.factory_game.audio.AudioService;
 
 import java.util.Map;
 

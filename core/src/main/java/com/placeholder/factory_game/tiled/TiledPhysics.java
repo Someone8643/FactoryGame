@@ -1,4 +1,4 @@
-package io.github.com.quillraven.tiled;
+package com.placeholder.factory_game.tiled;
 
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.EllipseMapObject;
@@ -17,7 +17,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.Shape;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import io.github.com.quillraven.GdxGame;
+import com.placeholder.factory_game.GdxGame;
 
 public final class TiledPhysics {
 

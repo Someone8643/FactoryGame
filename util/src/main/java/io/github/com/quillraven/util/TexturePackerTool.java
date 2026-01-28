@@ -1,4 +1,4 @@
-package io.github.com.quillraven.util;
+package com.placeholder.factory_game.util;
 
 import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 

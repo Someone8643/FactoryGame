@@ -1,4 +1,4 @@
-package io.github.com.quillraven.ui.view;
+package com.placeholder.factory_game.ui.view;
 
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -13,7 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import io.github.com.quillraven.ui.model.MenuViewModel;
+import com.placeholder.factory_game.ui.model.MenuViewModel;
 
 public class MenuView extends View<MenuViewModel> {
     private final Image selectionImg;

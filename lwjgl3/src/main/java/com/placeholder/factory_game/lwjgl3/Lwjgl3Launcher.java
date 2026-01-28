@@ -4,7 +4,7 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 //import com.placeholder.factory_game.FactoryGame;
 //import com.placeholder.factory_game.Main;
-import io.github.com.quillraven.GdxGame;
+import com.placeholder.factory_game.GdxGame;
 
 /** Launches the desktop (LWJGL3) application. */
 public class    Lwjgl3Launcher {

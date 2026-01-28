@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
@@ -13,10 +13,10 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
-import io.github.com.quillraven.component.Physic;
-import io.github.com.quillraven.component.Player;
-import io.github.com.quillraven.component.Transform;
-import io.github.com.quillraven.component.Trigger;
+import com.placeholder.factory_game.component.Physic;
+import com.placeholder.factory_game.component.Player;
+import com.placeholder.factory_game.component.Transform;
+import com.placeholder.factory_game.component.Trigger;
 
 public class PhysicSystem extends IteratingSystem implements EntityListener, ContactListener {
 

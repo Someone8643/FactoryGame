@@ -1,14 +1,14 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.component.Attack;
-import io.github.com.quillraven.component.Controller;
-import io.github.com.quillraven.component.Move;
-import io.github.com.quillraven.input.Command;
-import io.github.com.quillraven.screen.MenuScreen;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.component.Attack;
+import com.placeholder.factory_game.component.Controller;
+import com.placeholder.factory_game.component.Move;
+import com.placeholder.factory_game.input.Command;
+import com.placeholder.factory_game.screen.MenuScreen;
 
 public class ControllerSystem extends IteratingSystem {
     private final GdxGame game;

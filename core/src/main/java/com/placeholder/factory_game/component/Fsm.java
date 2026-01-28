@@ -1,10 +1,10 @@
-package io.github.com.quillraven.component;
+package com.placeholder.factory_game.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.ai.fsm.DefaultStateMachine;
-import io.github.com.quillraven.ai.AnimationState;
+import com.placeholder.factory_game.ai.AnimationState;
 
 public class Fsm implements Component {
     public static final ComponentMapper<Fsm> MAPPER = ComponentMapper.getFor(Fsm.class);

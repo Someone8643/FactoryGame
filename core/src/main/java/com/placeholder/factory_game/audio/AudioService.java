@@ -1,11 +1,11 @@
-package io.github.com.quillraven.audio;
+package com.placeholder.factory_game.audio;
 
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
-import io.github.com.quillraven.asset.AssetService;
-import io.github.com.quillraven.asset.MusicAsset;
-import io.github.com.quillraven.asset.SoundAsset;
+import com.placeholder.factory_game.asset.AssetService;
+import com.placeholder.factory_game.asset.MusicAsset;
+import com.placeholder.factory_game.asset.SoundAsset;
 
 public class AudioService {
 

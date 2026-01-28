@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -12,14 +12,14 @@ import com.badlogic.gdx.physics.box2d.Shape.Type;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import io.github.com.quillraven.audio.AudioService;
-import io.github.com.quillraven.component.Attack;
-import io.github.com.quillraven.component.Damaged;
-import io.github.com.quillraven.component.Facing;
-import io.github.com.quillraven.component.Facing.FacingDirection;
-import io.github.com.quillraven.component.Life;
-import io.github.com.quillraven.component.Move;
-import io.github.com.quillraven.component.Physic;
+import com.placeholder.factory_game.audio.AudioService;
+import com.placeholder.factory_game.component.Attack;
+import com.placeholder.factory_game.component.Damaged;
+import com.placeholder.factory_game.component.Facing;
+import com.placeholder.factory_game.component.Facing.FacingDirection;
+import com.placeholder.factory_game.component.Life;
+import com.placeholder.factory_game.component.Move;
+import com.placeholder.factory_game.component.Physic;
 
 public class AttackSystem extends IteratingSystem {
     public static final Rectangle attackAABB = new Rectangle();

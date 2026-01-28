@@ -1,4 +1,4 @@
-package io.github.com.quillraven.input;
+package com.placeholder.factory_game.input;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
 

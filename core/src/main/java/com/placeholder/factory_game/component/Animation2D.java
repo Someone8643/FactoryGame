@@ -1,12 +1,12 @@
-package io.github.com.quillraven.component;
+package com.placeholder.factory_game.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Animation.PlayMode;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import io.github.com.quillraven.asset.AtlasAsset;
-import io.github.com.quillraven.component.Facing.FacingDirection;
+import com.placeholder.factory_game.asset.AtlasAsset;
+import com.placeholder.factory_game.component.Facing.FacingDirection;
 
 public class Animation2D implements Component {
     public static final ComponentMapper<Animation2D> MAPPER = ComponentMapper.getFor(Animation2D.class);

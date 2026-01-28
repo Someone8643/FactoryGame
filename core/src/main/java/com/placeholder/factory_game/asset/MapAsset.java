@@ -1,4 +1,4 @@
-package io.github.com.quillraven.asset;
+package com.placeholder.factory_game.asset;
 
 import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.maps.tiled.BaseTiledMapLoader;

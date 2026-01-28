@@ -1,8 +1,8 @@
-package io.github.com.quillraven.component;
+package com.placeholder.factory_game.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
-import io.github.com.quillraven.input.Command;
+import com.placeholder.factory_game.input.Command;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -14,9 +14,9 @@ import com.badlogic.gdx.maps.tiled.tiles.AnimatedTiledMapTile;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import io.github.com.quillraven.GdxGame;
-import io.github.com.quillraven.component.Graphic;
-import io.github.com.quillraven.component.Transform;
+import com.placeholder.factory_game.GdxGame;
+import com.placeholder.factory_game.component.Graphic;
+import com.placeholder.factory_game.component.Transform;
 
 import java.util.ArrayList;
 import java.util.Comparator;

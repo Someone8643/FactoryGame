@@ -1,13 +1,13 @@
-package io.github.com.quillraven.system;
+package com.placeholder.factory_game.system;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntityListener;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
-import io.github.com.quillraven.component.Life;
-import io.github.com.quillraven.component.Player;
-import io.github.com.quillraven.ui.model.GameViewModel;
+import com.placeholder.factory_game.component.Life;
+import com.placeholder.factory_game.component.Player;
+import com.placeholder.factory_game.ui.model.GameViewModel;
 
 public class LifeSystem extends IteratingSystem implements EntityListener {
     private final GameViewModel viewModel;

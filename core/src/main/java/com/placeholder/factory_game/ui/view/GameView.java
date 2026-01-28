@@ -1,4 +1,4 @@
-package io.github.com.quillraven.ui.view;
+package com.placeholder.factory_game.ui.view;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Align;
 import com.github.tommyettinger.textra.TextraLabel;
 import com.github.tommyettinger.textra.TypingLabel;
-import io.github.com.quillraven.ui.model.GameViewModel;
+import com.placeholder.factory_game.ui.model.GameViewModel;
 
 import java.util.Map;
 
