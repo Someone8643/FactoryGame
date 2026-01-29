@@ -1,55 +1,51 @@
 package com.placeholder.factory_game.system;
+
+import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.utils.Array;
+import com.placeholder.factory_game.component.Inventory;
+import com.placeholder.factory_game.component.Item;
+import com.placeholder.factory_game.component.ItemStack;
 
-public class InventorySystem {
-}
+public class InventorySystem extends IteratingSystem {
 
-
-
-
-    private final Array<ItemStack> slots;
-
-    public Inventory(int size) {
-        slots = new Array<>(size);
-        for (int i = 0; i < size; i++) {
-            slots.add(new ItemStack(null, 0));
-        }
+    public InventorySystem() {
+        super(Family.all(Inventory.class).get());
     }
 
-    public boolean addItem(Item item, int amount) {
+    @Override
+    protected void processEntity(Entity entity, float deltaTime) {
+        Inventory inventory = Inventory.MAPPER.get(entity);
 
-        // 1️⃣ Intentar apilar
-        if (item.stackable) {
-            for (ItemStack stack : slots) {
-                if (!stack.isEmpty() && stack.item == item && !stack.isFull()) {
-                    stack.add(amount);
-                    return true;
-                }
-            }
-        }
-
-        // 2️⃣ Buscar hueco libre
-        for (ItemStack stack : slots) {
+        // Limpiar stacks vacíos automáticamente
+        for (ItemStack stack : inventory.getSlots()) {
             if (stack.isEmpty()) {
-                stack.item = item;
-                stack.amount = Math.min(amount, item.maxStack);
-                return true;
+                stack.item = null;
+                stack.amount = 0;
             }
         }
 
-        return false; // inventario lleno
+        // Aquí se podría añadir lógica para usar items automáticamente cada frame
     }
 
-    public void removeItem(Item item, int amount) {
-        for (ItemStack stack : slots) {
-            if (!stack.isEmpty() && stack.item == item) {
-                stack.remove(amount);
-                return;
-            }
+    public boolean addItem(Entity entity, Item item, int amount) {
+        Inventory inventory = Inventory.MAPPER.get(entity);
+        return inventory != null && inventory.addItem(item, amount);
+    }
+
+    public void removeItem(Entity entity, Item item, int amount) {
+        Inventory inventory = Inventory.MAPPER.get(entity);
+        if (inventory != null) {
+            inventory.removeItem(item, amount);
         }
     }
 
-    public Array<ItemStack> getSlots() {
-        return slots;
+    public Array<ItemStack> getSlots(Entity entity) {
+        Inventory inventory = Inventory.MAPPER.get(entity);
+        if (inventory != null) {
+            return inventory.getSlots();
+        }
+        return new Array<>();
     }
 }
