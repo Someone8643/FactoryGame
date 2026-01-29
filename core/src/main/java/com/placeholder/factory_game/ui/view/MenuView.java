@@ -69,8 +69,8 @@ public class MenuView extends View<MenuViewModel> {
 
         setupMenuContent();
 
-        Label label = new Label("by Quillraven 2025", skin, "small");
-        label.setColor(skin.getColor("white"));
+        Label label = new Label("by Placeholder 2026", skin, "small");
+        label.setColor(skin.getColor("red"));
         add(label).padRight(5.0f).padBottom(5f).expand().align(Align.bottomRight);
     }
 
@@ -85,21 +85,21 @@ public class MenuView extends View<MenuViewModel> {
         contentTable.padTop(25.0f);
         contentTable.padBottom(20.0f);
 
-        TextButton textButton = new TextButton("Start Game", skin);
+        TextButton textButton = new TextButton("Start game", skin);
         textButton.setName(MenuOption.START_GAME.name());
         onClick(textButton, viewModel::startGame);
         onEnter(textButton, this::selectMenuItem);
         contentTable.add(textButton).row();
 
-        Slider musicSlider = setupVolumeSlider(contentTable, "Music Volume", MenuOption.MUSIC_VOLUME);
+        Slider musicSlider = setupVolumeSlider(contentTable, "Music volume", MenuOption.MUSIC_VOLUME);
         musicSlider.setValue(viewModel.getMusicVolume());
         onChange(musicSlider, (slider) -> viewModel.setMusicVolume(slider.getValue()));
 
-        Slider soundSlider = setupVolumeSlider(contentTable, "Sound Volume", MenuOption.SOUND_VOLUME);
+        Slider soundSlider = setupVolumeSlider(contentTable, "Sound volume", MenuOption.SOUND_VOLUME);
         soundSlider.setValue(viewModel.getSoundVolume());
         onChange(soundSlider, (slider) -> viewModel.setSoundVolume(slider.getValue()));
 
-        textButton = new TextButton("Quit Game", skin);
+        textButton = new TextButton("Exit game", skin);
         textButton.setName(MenuOption.QUIT_GAME.name());
         onClick(textButton, viewModel::quitGame);
         onEnter(textButton, this::selectMenuItem);
@@ -112,7 +112,7 @@ public class MenuView extends View<MenuViewModel> {
         Table table = new Table();
         table.setName(menuOption.name());
         Label label = new Label(title, skin);
-        label.setColor(skin.getColor("sand"));
+        label.setColor(skin.getColor("green"));
         table.add(label).row();
 
         Slider slider = new Slider(0.0f, 1f, 0.05f, false, skin);
