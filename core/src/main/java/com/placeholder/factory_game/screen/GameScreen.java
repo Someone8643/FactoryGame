@@ -18,19 +18,7 @@ import com.placeholder.factory_game.asset.SkinAsset;
 import com.placeholder.factory_game.audio.AudioService;
 import com.placeholder.factory_game.input.GameControllerState;
 import com.placeholder.factory_game.input.KeyboardController;
-import com.placeholder.factory_game.system.AnimationSystem;
-import com.placeholder.factory_game.system.AttackSystem;
-import com.placeholder.factory_game.system.CameraSystem;
-import com.placeholder.factory_game.system.ControllerSystem;
-import com.placeholder.factory_game.system.DamagedSystem;
-import com.placeholder.factory_game.system.FacingSystem;
-import com.placeholder.factory_game.system.FsmSystem;
-import com.placeholder.factory_game.system.LifeSystem;
-import com.placeholder.factory_game.system.PhysicDebugRenderSystem;
-import com.placeholder.factory_game.system.PhysicMoveSystem;
-import com.placeholder.factory_game.system.PhysicSystem;
-import com.placeholder.factory_game.system.RenderSystem;
-import com.placeholder.factory_game.system.TriggerSystem;
+import com.placeholder.factory_game.system.*;
 import com.placeholder.factory_game.tiled.TiledAshleyConfigurator;
 import com.placeholder.factory_game.tiled.TiledService;
 import com.placeholder.factory_game.ui.model.GameViewModel;
@@ -70,6 +58,7 @@ public class GameScreen extends ScreenAdapter {
         this.engine.addSystem(new PhysicSystem(physicWorld, 1 / 60f));
         this.engine.addSystem(new FacingSystem());
         this.engine.addSystem(new AttackSystem(physicWorld, audioService));
+        this.engine.addSystem(new InteractSystem(physicWorld, audioService));
         this.engine.addSystem(new FsmSystem());
         // DamagedSystem must run after FsmSystem to correctly
         // detect when a damaged animation should be played.
