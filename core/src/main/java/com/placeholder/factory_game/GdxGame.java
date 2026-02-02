@@ -87,7 +87,7 @@ public class GdxGame extends Game {
 
         super.render();
 
-        Gdx.graphics.setTitle("Mystic Tutorial - Draw Calls: " + glProfiler.getDrawCalls());
+        Gdx.graphics.setTitle("Factory Game - Draw Calls: " + glProfiler.getDrawCalls());
         fpsLogger.log();
     }
 

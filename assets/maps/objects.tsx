@@ -8,6 +8,7 @@
    <property name="attackSound" value="SWING"/>
    <property name="damage" type="float" value="7"/>
    <property name="damageDelay" type="float" value="0.2"/>
+   <property name="interactDelay" type="float" value="0.4"/>
    <property name="life" type="int" value="12"/>
    <property name="lifeReg" type="float" value="0.25"/>
    <property name="speed" type="float" value="3.5"/>

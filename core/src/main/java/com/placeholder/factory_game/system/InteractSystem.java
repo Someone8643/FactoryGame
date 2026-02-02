@@ -18,21 +18,21 @@ import com.placeholder.factory_game.component.*;
 import com.placeholder.factory_game.component.Facing.FacingDirection;
 
 public class InteractSystem extends IteratingSystem {
-    public static final Rectangle attackAABB = new Rectangle();
+    public static final Rectangle interactAABB = new Rectangle();
 
     private final AudioService audioService;
     private final World world;
     private final Vector2 tmpVertex;
-    private Body attackerBody;
-    private float attackDamage;
+    private Body interacterBody;
+//    private float attackDamage;
 
     public InteractSystem(World world, AudioService audioService) {
         super(Family.all(Attack.class, Facing.class, Physic.class).get());
         this.audioService = audioService;
         this.world = world;
         this.tmpVertex = new Vector2();
-        this.attackerBody = null;
-        this.attackDamage = 0f;
+        this.interacterBody = null;
+//        this.attackDamage = 0f;
     }
 
     /**
@@ -41,63 +41,76 @@ public class InteractSystem extends IteratingSystem {
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
 
+
+        try {
+
 //        Gdx.app.debug("TEST", "testsfasfassdsd");
-        Attack attack = Attack.MAPPER.get(entity);
-        // can attack = true means that the attack was not started yet
-        if (attack.canAttack()) return;
+            Interact interact = Interact.MAPPER.get(entity);
+            if (interact == null) return;
+            // can attack = true means that the attack was not started yet
+            if (interact.canInteract()) return;
 
-        if (attack.hasAttackStarted() && attack.getSfx() != null) {
-            audioService.playSound(attack.getSfx());
-            Move move = Move.MAPPER.get(entity);
-            if (move != null) {
-                move.setRooted(true);
+
+
+            if (interact.hasInteractStarted() && interact.getSfx() != null) {
+                audioService.playSound(interact.getSfx());
+                Move move = Move.MAPPER.get(entity);
+                if (move != null) {
+                    move.setRooted(true);
+                }
             }
-        }
 
-        attack.decAttackTimer(deltaTime);
-        if (attack.canAttack()) {
-            FacingDirection facingDirection = Facing.MAPPER.get(entity).getDirection();
-            attackerBody = Physic.MAPPER.get(entity).getBody();
-            PolygonShape attackPolygonShape = getAttackFixture(attackerBody, facingDirection);
-            updateAttackAABB(attackerBody.getPosition(), attackPolygonShape);
+            interact.decInteractTimer(deltaTime);
+            if (interact.canInteract()) {
+                FacingDirection facingDirection = Facing.MAPPER.get(entity).getDirection();
+                interacterBody = Physic.MAPPER.get(entity).getBody();
+                PolygonShape attackPolygonShape = getAttackFixture(interacterBody, facingDirection);
+                updateInteractAABB(interacterBody.getPosition(), attackPolygonShape);
 
-            this.attackDamage = attack.getDamage();
-            world.QueryAABB(this::attackCallback, attackAABB.x, attackAABB.y, attackAABB.width, attackAABB.height);
+                Gdx.app.debug("TEST", "entra en interact");
 
-            Move move = Move.MAPPER.get(entity);
-            if (move != null) {
-                move.setRooted(false);
+                world.QueryAABB(this::interactCallback, interactAABB.x, interactAABB.y, interactAABB.width, interactAABB.height);
+
+                Move move = Move.MAPPER.get(entity);
+                if (move != null) {
+                    move.setRooted(false);
+                }
             }
+        } catch (Exception ex) {
+
+            Gdx.app.debug("Exeption in interact", "Ex: " + ex );
         }
     }
 
-    private boolean attackCallback(Fixture fixture) {
+    private boolean interactCallback(Fixture fixture) {
         Body body = fixture.getBody();
-        if (body.equals(attackerBody)) return true;
+        if (body.equals(interacterBody)) return true;
         if (!(body.getUserData() instanceof Entity entity)) return true;
 
-        Life life = Life.MAPPER.get(entity);
-        if (life == null) {
-            return true;
-        }
+        Gdx.app.debug("Interact", "INTERACT CALLBACK AAAAA");
 
-        Damaged damaged = Damaged.MAPPER.get(entity);
-        if (damaged == null) {
-            entity.add(new Damaged(this.attackDamage));
-        } else {
-            damaged.addDamage(this.attackDamage);
-        }
+//        Life life = Life.MAPPER.get(entity);
+//        if (life == null) {
+//            return true;
+//        }
+
+//        Damaged damaged = Damaged.MAPPER.get(entity);
+//        if (damaged == null) {
+//            entity.add(new Damaged(this.attackDamage));
+//        } else {
+//            damaged.addDamage(this.attackDamage);
+//        }
         return true;
     }
 
-    private void updateAttackAABB(Vector2 bodyPosition, PolygonShape attackPolygonShape) {
+    private void updateInteractAABB(Vector2 bodyPosition, PolygonShape attackPolygonShape) {
         attackPolygonShape.getVertex(0, tmpVertex);
         tmpVertex.add(bodyPosition);
-        attackAABB.setPosition(tmpVertex.x, tmpVertex.y);
+        interactAABB.setPosition(tmpVertex.x, tmpVertex.y);
 
         attackPolygonShape.getVertex(2, tmpVertex);
         tmpVertex.add(bodyPosition);
-        attackAABB.setSize(tmpVertex.x, tmpVertex.y);
+        interactAABB.setSize(tmpVertex.x, tmpVertex.y);
     }
 
     private PolygonShape getAttackFixture(Body body, FacingDirection direction) {

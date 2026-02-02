@@ -2,6 +2,7 @@ package com.placeholder.factory_game.tiled;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -25,22 +26,9 @@ import com.placeholder.factory_game.GdxGame;
 import com.placeholder.factory_game.asset.AssetService;
 import com.placeholder.factory_game.asset.AtlasAsset;
 import com.placeholder.factory_game.asset.SoundAsset;
-import com.placeholder.factory_game.component.Animation2D;
+import com.placeholder.factory_game.component.*;
 import com.placeholder.factory_game.component.Animation2D.AnimationType;
-import com.placeholder.factory_game.component.Attack;
-import com.placeholder.factory_game.component.CameraFollow;
-import com.placeholder.factory_game.component.Controller;
-import com.placeholder.factory_game.component.Facing;
 import com.placeholder.factory_game.component.Facing.FacingDirection;
-import com.placeholder.factory_game.component.Fsm;
-import com.placeholder.factory_game.component.Graphic;
-import com.placeholder.factory_game.component.Life;
-import com.placeholder.factory_game.component.Move;
-import com.placeholder.factory_game.component.Physic;
-import com.placeholder.factory_game.component.Player;
-import com.placeholder.factory_game.component.Tiled;
-import com.placeholder.factory_game.component.Transform;
-import com.placeholder.factory_game.component.Trigger;
 
 public class TiledAshleyConfigurator {
     private static final Vector2 DEFAULT_PHYSIC_SCALING = new Vector2(1f, 1f);
@@ -121,6 +109,8 @@ public class TiledAshleyConfigurator {
         addEntityLife(tile, entity);
         addEntityPlayer(tileMapObject, entity);
         addEntityAttack(tile, entity);
+        addEntityInteract(tile, entity);
+//        addEntityAttack(tile, entity); // TODO: add entity interactable
         entity.add(new Facing(FacingDirection.DOWN));
         entity.add(new Fsm(entity));
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
@@ -150,6 +140,25 @@ public class TiledAshleyConfigurator {
             soundAsset = SoundAsset.valueOf(soundAssetStr);
         }
         entity.add(new Attack(damage, damageDelay, soundAsset));
+    }
+
+    private void addEntityInteract(TiledMapTile tile, Entity entity) {
+
+        if ((tile.getProperties().get("interactDelay") == null)) {
+            return;
+        }
+
+
+
+        float interactDelay = tile.getProperties().get("interactDelay", 0.2f, Float.class);
+        String soundAssetStr = tile.getProperties().get("interactSound", String.class);
+        SoundAsset soundAsset = null;
+        if (soundAssetStr != null) {
+            soundAsset = SoundAsset.valueOf(soundAssetStr);
+        }
+        entity.add(new Interact(interactDelay, soundAsset));
+
+        Gdx.app.debug("TEST", "Added interact");
     }
 
     private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {

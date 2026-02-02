@@ -6,6 +6,7 @@ import com.badlogic.ashley.systems.IteratingSystem;
 import com.placeholder.factory_game.GdxGame;
 import com.placeholder.factory_game.component.Attack;
 import com.placeholder.factory_game.component.Controller;
+import com.placeholder.factory_game.component.Interact;
 import com.placeholder.factory_game.component.Move;
 import com.placeholder.factory_game.input.Command;
 import com.placeholder.factory_game.screen.MenuScreen;
@@ -35,6 +36,7 @@ public class ControllerSystem extends IteratingSystem {
                 case LEFT -> moveEntity(entity, -1f, 0f);
                 case RIGHT -> moveEntity(entity, 1f, 0f);
                 case SELECT -> startEntityAttack(entity);
+                case INTERACT -> startEntityInteract(entity);
                 case CANCEL -> game.setScreen(MenuScreen.class);
             }
         }
@@ -55,6 +57,13 @@ public class ControllerSystem extends IteratingSystem {
         Attack attack = Attack.MAPPER.get(entity);
         if (attack != null && attack.canAttack()) {
             attack.startAttack();
+        }
+    }
+
+    private void startEntityInteract(Entity entity) {
+        Interact interact = Interact.MAPPER.get(entity);
+        if (interact != null && interact.canInteract()) {
+            interact.startInteract();
         }
     }
 

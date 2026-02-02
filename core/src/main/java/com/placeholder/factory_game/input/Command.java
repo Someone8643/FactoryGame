@@ -6,5 +6,5 @@ public enum Command {
     DOWN,
     UP,
     SELECT,
-    CANCEL
+    INTERACT, CANCEL
 }
