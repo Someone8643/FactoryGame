@@ -110,6 +110,7 @@ public class TiledAshleyConfigurator {
         addEntityPlayer(tileMapObject, entity);
         addEntityAttack(tile, entity);
         addEntityInteract(tile, entity);
+        addEntityInventory(tile, entity);
 //        addEntityAttack(tile, entity); // TODO: add entity interactable
         entity.add(new Facing(FacingDirection.DOWN));
         entity.add(new Fsm(entity));
@@ -157,6 +158,23 @@ public class TiledAshleyConfigurator {
         entity.add(new Interact(interactDelay, soundAsset));
 
 //        Gdx.app.debug("TEST", "Added interact");
+    }
+
+    private void addEntityInventory(TiledMapTile tile, Entity entity) {
+
+        // Si la class no equival a Player fa un return
+        if (tile.getProperties().get("inventoryOpen") == null) {
+            return;
+        }
+
+        String soundAssetStr = tile.getProperties().get("interactSound", String.class);
+        SoundAsset soundAsset = null;
+        if (soundAssetStr != null) {
+            soundAsset = SoundAsset.valueOf(soundAssetStr);
+        }
+
+        entity.add(new Inventory(16, soundAsset));
+        Gdx.app.debug("TEST", "Added inventory");
     }
 
     private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {

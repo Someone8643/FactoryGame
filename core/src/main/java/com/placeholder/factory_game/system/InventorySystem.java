@@ -19,7 +19,7 @@ public class InventorySystem extends IteratingSystem {
     protected void processEntity(Entity entity, float deltaTime) {
         Inventory inventory = Inventory.MAPPER.get(entity);
 
-        Gdx.app.debug("Test", "Test2");
+        if (inventory == null) return;
 
         // Limpiar stacks vacíos automáticamente
         for (ItemStack stack : inventory.getSlots()) {
@@ -39,7 +39,7 @@ public class InventorySystem extends IteratingSystem {
 
     public void removeItem(Entity entity, Item item, int amount) {
         Inventory inventory = Inventory.MAPPER.get(entity);
-        if (inventory != null) {
+        if (inventory != null && inventory.getSfx() != null) {
             inventory.removeItem(item, amount);
         }
     }
