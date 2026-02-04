@@ -3,11 +3,9 @@ package com.placeholder.factory_game.system;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
+import com.badlogic.gdx.Gdx;
 import com.placeholder.factory_game.GdxGame;
-import com.placeholder.factory_game.component.Attack;
-import com.placeholder.factory_game.component.Controller;
-import com.placeholder.factory_game.component.Interact;
-import com.placeholder.factory_game.component.Move;
+import com.placeholder.factory_game.component.*;
 import com.placeholder.factory_game.input.Command;
 import com.placeholder.factory_game.screen.MenuScreen;
 
@@ -37,6 +35,7 @@ public class ControllerSystem extends IteratingSystem {
                 case RIGHT -> moveEntity(entity, 1f, 0f);
                 case SELECT -> startEntityAttack(entity);
                 case INTERACT -> startEntityInteract(entity);
+                case INVENTORY -> startEntityInventory(entity);
                 case CANCEL -> game.setScreen(MenuScreen.class);
             }
         }
@@ -64,6 +63,13 @@ public class ControllerSystem extends IteratingSystem {
         Interact interact = Interact.MAPPER.get(entity);
         if (interact != null && interact.canInteract()) {
             interact.startInteract();
+        }
+    }
+
+    private void startEntityInventory(Entity entity) {
+        Inventory inventory = Inventory.MAPPER.get(entity);
+        if (inventory != null) {
+            Gdx.app.debug("Inventory","Has arribat al command de inventory");
         }
     }
 

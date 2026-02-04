@@ -3,6 +3,7 @@ package com.placeholder.factory_game.system;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Array;
 import com.placeholder.factory_game.component.Inventory;
 import com.placeholder.factory_game.component.Item;
@@ -17,6 +18,8 @@ public class InventorySystem extends IteratingSystem {
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         Inventory inventory = Inventory.MAPPER.get(entity);
+
+        Gdx.app.debug("Test", "Test2");
 
         // Limpiar stacks vacíos automáticamente
         for (ItemStack stack : inventory.getSlots()) {
