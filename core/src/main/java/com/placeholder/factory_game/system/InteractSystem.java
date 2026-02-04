@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -16,6 +17,8 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.placeholder.factory_game.audio.AudioService;
 import com.placeholder.factory_game.component.*;
 import com.placeholder.factory_game.component.Facing.FacingDirection;
+
+import java.util.Objects;
 
 public class InteractSystem extends IteratingSystem {
     public static final Rectangle interactAABB = new Rectangle();
@@ -67,7 +70,7 @@ public class InteractSystem extends IteratingSystem {
                 PolygonShape attackPolygonShape = getAttackFixture(interacterBody, facingDirection);
                 updateInteractAABB(interacterBody.getPosition(), attackPolygonShape);
 
-                Gdx.app.debug("TEST", "entra en interact");
+//                Gdx.app.debug("TEST", "entra en interact");
 
                 world.QueryAABB(this::interactCallback, interactAABB.x, interactAABB.y, interactAABB.width, interactAABB.height);
 
@@ -78,7 +81,7 @@ public class InteractSystem extends IteratingSystem {
             }
         } catch (Exception ex) {
 
-            Gdx.app.debug("Exeption in interact", "Ex: " + ex );
+            Gdx.app.debug("Exception in interact", "Ex: " + ex );
         }
     }
 
@@ -87,19 +90,27 @@ public class InteractSystem extends IteratingSystem {
         if (body.equals(interacterBody)) return true;
         if (!(body.getUserData() instanceof Entity entity)) return true;
 
-        Gdx.app.debug("Interact", "INTERACT CALLBACK AAAAA");
+//        Gdx.app.debug("Interact", "INTERACT CALLBACK AAAAA");
 
-//        Life life = Life.MAPPER.get(entity);
-//        if (life == null) {
-//            return true;
-//        }
+        Tiled tile = Tiled.MAPPER.get(entity);
+        if (tile == null) {
+            return true;
+        }
 
-//        Damaged damaged = Damaged.MAPPER.get(entity);
-//        if (damaged == null) {
-//            entity.add(new Damaged(this.attackDamage));
-//        } else {
-//            damaged.addDamage(this.attackDamage);
-//        }
+        if (Objects.equals(tile.getMapObjectRef().getName(), "Ore")) { // Mine the ore by 1
+
+            MapProperties tileProperties = tile.getMapObjectRef().getProperties();
+            Gdx.app.debug("Minar amb interact", "Minar ore, ara té: " + tileProperties.get("oreAmount"));
+
+            if ((int)tileProperties.get("oreAmount") > 0) {
+
+                tileProperties.put("oreAmount", (int)tileProperties.get("oreAmount") - 1);
+                Gdx.app.debug("Minar amb interact", "Queda: " + tile.getMapObjectRef().getProperties().get("oreAmount"));
+            }
+        }
+
+
+
         return true;
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="objects" tilewidth="80" tileheight="112" tilecount="6" columns="0">
+<tileset version="1.10" tiledversion="1.11.2" name="objects" tilewidth="80" tileheight="112" tilecount="7" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="1" type="Object">
   <properties>
@@ -71,13 +71,22 @@
   <properties>
    <property name="animation" value="IDLE"/>
    <property name="animationSpeed" type="float" value="1"/>
-   <property name="bodyType" propertytype="BodyType" value="StaticBody"/>
+   <property name="bodyType" value="StaticBody"/>
    <property name="life" type="int" value="99999"/>
    <property name="lifeReg" type="float" value="9999"/>
   </properties>
   <image source="objects/training_dummy.png" width="32" height="32"/>
   <objectgroup draworder="index" id="2">
    <object id="1" x="3" y="12" width="26" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="8" type="Prop">
+  <properties>
+   <property name="oreAmount" type="int" value="100"/>
+  </properties>
+  <image source="objects/simpleIronOrepng.png" width="16" height="16"/>
+  <objectgroup draworder="index" id="2">
+   <object id="3" x="2" y="6" width="12" height="10"/>
   </objectgroup>
  </tile>
 </tileset>

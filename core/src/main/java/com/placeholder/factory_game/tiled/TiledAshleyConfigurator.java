@@ -148,8 +148,6 @@ public class TiledAshleyConfigurator {
             return;
         }
 
-
-
         float interactDelay = tile.getProperties().get("interactDelay", 0.2f, Float.class);
         String soundAssetStr = tile.getProperties().get("interactSound", String.class);
         SoundAsset soundAsset = null;
@@ -158,7 +156,7 @@ public class TiledAshleyConfigurator {
         }
         entity.add(new Interact(interactDelay, soundAsset));
 
-        Gdx.app.debug("TEST", "Added interact");
+//        Gdx.app.debug("TEST", "Added interact");
     }
 
     private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {
