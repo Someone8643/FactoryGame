@@ -30,6 +30,7 @@
     <property name="camFollow" type="bool" value="true"/>
     <property name="controller" type="bool" value="true"/>
     <property name="interactDelay" type="float" value="0.4"/>
+    <property name="inventoryOpen" type="bool" value="true"/>
    </properties>
   </object>
   <object id="11" gid="6" x="44" y="200" width="41" height="63"/>

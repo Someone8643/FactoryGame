@@ -5,6 +5,7 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Array;
+import com.placeholder.factory_game.asset.SoundAsset;
 
 /** Componente de inventario para entidades */
 public class Inventory implements Component {
@@ -13,11 +14,13 @@ public class Inventory implements Component {
     public static final ComponentMapper<Inventory> MAPPER = ComponentMapper.getFor(Inventory.class);
 
     private Array<ItemStack> slots = new Array<>();
+    private SoundAsset sfx;
 
-    public Inventory(int size) {
+    public Inventory(int size, SoundAsset sfx) {
         for (int i = 0; i < size; i++) {
             slots.add(new ItemStack());
         }
+       this.sfx = sfx;
     }
 
     public Array<ItemStack> getSlots() {
@@ -49,5 +52,9 @@ public class Inventory implements Component {
                 return;
             }
         }
+    }
+
+    public SoundAsset getSfx() {
+        return sfx;
     }
 }

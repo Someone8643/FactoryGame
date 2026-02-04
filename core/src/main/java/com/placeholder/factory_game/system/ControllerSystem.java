@@ -68,6 +68,7 @@ public class ControllerSystem extends IteratingSystem {
 
     private void startEntityInventory(Entity entity) {
         Inventory inventory = Inventory.MAPPER.get(entity);
+        Gdx.app.debug("Inventory","Crida la funció correctament");
         if (inventory != null) {
             Gdx.app.debug("Inventory","Has arribat al command de inventory");
         }
