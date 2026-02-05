@@ -174,7 +174,7 @@ public class TiledAshleyConfigurator {
         }
 
         entity.add(new Inventory(16, soundAsset));
-        Gdx.app.debug("TEST", "Added inventory");
+//        Gdx.app.debug("TEST", "Added inventory");
     }
 
     private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {

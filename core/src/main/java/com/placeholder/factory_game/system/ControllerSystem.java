@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.placeholder.factory_game.GdxGame;
 import com.placeholder.factory_game.component.*;
 import com.placeholder.factory_game.input.Command;
+import com.placeholder.factory_game.screen.InventoryUIScreen;
 import com.placeholder.factory_game.screen.MenuScreen;
 
 public class ControllerSystem extends IteratingSystem {
@@ -70,7 +71,7 @@ public class ControllerSystem extends IteratingSystem {
         Inventory inventory = Inventory.MAPPER.get(entity);
         Gdx.app.debug("Inventory","Crida la funció correctament");
         if (inventory != null) {
-            Gdx.app.debug("Inventory","Has arribat al command de inventory");
+            this.game.setScreen(InventoryUIScreen.class);
         }
     }
 

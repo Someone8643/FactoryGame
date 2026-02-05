@@ -90,7 +90,7 @@ public class InteractSystem extends IteratingSystem {
         if (body.equals(interacterBody)) return true;
         if (!(body.getUserData() instanceof Entity entity)) return true;
 
-//        Gdx.app.debug("Interact", "INTERACT CALLBACK AAAAA");
+//        Gdx.app.debug("Interact", "INTERACT CALLBACK");
 
         Tiled tile = Tiled.MAPPER.get(entity);
         if (tile == null) {
