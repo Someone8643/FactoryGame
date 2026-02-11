@@ -49,6 +49,7 @@ public class LoadingScreen extends ScreenAdapter {
     private void createScreens() {
         this.game.addScreen(new GameScreen(this.game));
         this.game.addScreen(new MenuScreen(this.game));
+        this.game.addScreen(new DeathScreen(this.game));
         this.game.addScreen(new InventoryUIScreen(this.game));
     }
 }
